@@ -34,6 +34,7 @@ const initilizeDBAndServer = async () => {
     });
   } catch (e) {
     console.log(`DB ERROR: ${e.message}`);
+    process.exit(1);
   }
 };
 initilizeDBAndServer();
@@ -51,6 +52,7 @@ const authenticateToken = (request, response, next) => {
   } else {
     jwt.verify(jwtToken, "saicharan", async (error, payload) => {
       if (error) {
+        response.status(401);
         response.send("Invalid JWT Token");
       } else {
         request.username = payload.username;
@@ -95,7 +97,9 @@ app.get("/states/:stateId/", authenticateToken, async (request, response) => {
   const { stateId } = request.params;
 
   const getState = `
-    SELECT * FROM state WHERE state_id = ${stateId};`;
+    SELECT state_id AS stateId,
+    state_name AS stateName,
+    population FROM state WHERE state_id = ${stateId};`;
   const stateObj = await db.get(getState);
 
   response.send(stateObj);
@@ -134,7 +138,11 @@ app.get(
     const { districtId } = request.params;
 
     const getDistrict = `
-    SELECT * FROM district WHERE district_id = ${districtId};`;
+    SELECT district_id AS districtId,
+    district_name AS districtName,
+    state_id AS stateId,
+    cases, cured, active,
+    deaths FROM district WHERE district_id = ${districtId};`;
     const districtObj = await db.get(getDistrict);
 
     response.send(districtObj);

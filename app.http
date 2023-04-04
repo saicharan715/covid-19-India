@@ -1,15 +1,16 @@
 GET http://localhost:3000/states/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNDM2NTcxfQ.DOaQcEkNwQLz2oqAEmJ3--hfIeKdlCYRIGp32uIWSSA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 
 ###
 
 GET http://localhost:3000/states/8/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 ###
 
 
 
 POST http://localhost:3000/districts/
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 Content-Type: application/json
 
 {
@@ -24,13 +25,15 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/districts/322/
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 ###
 
 DELETE http://localhost:3000/districts/20/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 ###
 
 PUT http://localhost:3000/districts/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 Content-Type: application/json
 
 {
@@ -44,7 +47,8 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000//states/:stateId/stats/
+GET http://localhost:3000/states/8/stats/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjgwNTI5MTUxfQ.NlEDWxaRljESRXnkSR0QhdrwOSBR7vdRhgKeMPiqDzA
 
 ###
 
